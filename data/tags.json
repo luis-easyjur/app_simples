@@ -1,0 +1,7 @@
+{
+  "tags": [
+    {"id": 1, "nome": "Urgente", "cor": "#E5293F"},
+    {"id": 2, "nome": "Importante", "cor": "#F59E0B"},
+    {"id": 3, "nome": "Follow-up", "cor": "#3B82F6"}
+  ]
+}

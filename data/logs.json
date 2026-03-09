@@ -1,0 +1,100 @@
+{
+    "logs": [
+        {
+            "id": 1,
+            "entidade": "agendas",
+            "entidade_id": 2,
+            "acao": "criar",
+            "dados_anteriores": null,
+            "dados_novos": {
+                "id": 2,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [],
+                "titulo": "Reuniao de boas vindas",
+                "data_agenda": "2026-03-11",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "teste",
+                "status": "agendado",
+                "criado_em": "2026-03-09 17:32:53",
+                "updated_at": "2026-03-09 17:32:53"
+            },
+            "data": "2026-03-09 17:32:53"
+        },
+        {
+            "id": 2,
+            "entidade": "agendas",
+            "entidade_id": 1,
+            "acao": "editar",
+            "dados_anteriores": {
+                "id": 1,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "titulo": "Reunião de alinhamento",
+                "data_agenda": "2025-03-10",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "Discussão do projeto",
+                "status": "agendado",
+                "tag_ids": [],
+                "criado_em": "2025-03-09 10:00:00",
+                "updated_at": "2025-03-09 10:00:00"
+            },
+            "dados_novos": {
+                "id": 1,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [
+                    2
+                ],
+                "titulo": "Reunião de alinhamento",
+                "data_agenda": "2026-03-25",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "Discussão do projeto",
+                "status": "agendado",
+                "criado_em": "2025-03-09 10:00:00",
+                "updated_at": "2026-03-09 18:15:30"
+            },
+            "data": "2026-03-09 18:15:30"
+        },
+        {
+            "id": 3,
+            "entidade": "agendas",
+            "entidade_id": 2,
+            "acao": "editar",
+            "dados_anteriores": {
+                "id": 2,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [],
+                "titulo": "Reuniao de boas vindas",
+                "data_agenda": "2026-03-11",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "teste",
+                "status": "agendado",
+                "criado_em": "2026-03-09 17:32:53",
+                "updated_at": "2026-03-09 17:32:53"
+            },
+            "dados_novos": {
+                "id": 2,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [
+                    2
+                ],
+                "titulo": "Reuniao de boas vindas",
+                "data_agenda": "2026-03-11",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "teste",
+                "status": "agendado",
+                "criado_em": "2026-03-09 17:32:53",
+                "updated_at": "2026-03-09 18:15:40"
+            },
+            "data": "2026-03-09 18:15:40"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+  "tipos": [
+    {"id": 1, "nome": "Reunião"},
+    {"id": 2, "nome": "Audiência"},
+    {"id": 3, "nome": "Prazo"},
+    {"id": 4, "nome": "Consulta"},
+    {"id": 5, "nome": "Outro"}
+  ]
+}

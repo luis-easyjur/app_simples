@@ -1,0 +1,12 @@
+{
+  "lembretes": [
+    {
+      "id": 1,
+      "agenda_id": 1,
+      "mensagem": "Lembrete: Reunião amanhã às 09:00",
+      "data_lembrete": "2025-03-10 08:00:00",
+      "lido": false,
+      "criado_em": "2025-03-09 10:00:00"
+    }
+  ]
+}

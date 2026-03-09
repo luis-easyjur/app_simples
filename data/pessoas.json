@@ -1,0 +1,20 @@
+{
+  "pessoas": [
+    {
+      "id": 1,
+      "nome": "Maria Silva",
+      "email": "maria.silva@exemplo.com",
+      "telefone": "(11) 98765-4321",
+      "criado_em": "2025-03-09 10:00:00",
+      "updated_at": "2025-03-09 10:00:00"
+    },
+    {
+      "id": 2,
+      "nome": "João Santos",
+      "email": "joao.santos@exemplo.com",
+      "telefone": "(11) 91234-5678",
+      "criado_em": "2025-03-09 10:05:00",
+      "updated_at": "2025-03-09 10:05:00"
+    }
+  ]
+}
