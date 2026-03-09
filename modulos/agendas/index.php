@@ -49,7 +49,7 @@
         .toast.sucesso { background: #22c55e; color: white; }
         .toast.erro { background: var(--vermelho-easyjur); color: white; }
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: -1; align-items: center; justify-content: center; }
         .modal-overlay.ativo { display: flex; }
         .modal { background: white; border-radius: 8px; padding: 2.5rem; width: 100%; max-width: 720px; min-height: 70vh; max-height: 90vh; overflow-y: auto; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
         .modal h2 { margin-bottom: 1.5rem; font-size: 1.35rem; }

@@ -72,7 +72,7 @@ switch ($metodo) {
         $dataAgenda = trim($input['data_agenda'] ?? date('Y-m-d'));
         $horaInicio = trim($input['hora_inicio'] ?? '09:00');
         $horaFim = trim($input['hora_fim'] ?? '10:00');
-        if (strtotime($dataAgenda) < strtotime(date('Y-m-d'))) {
+        if (strtotime($dataAgenda) > strtotime(date('Y-m-d'))) {
             responder(['erro' => 'Data não pode ser no passado'], 400);
             exit;
         }

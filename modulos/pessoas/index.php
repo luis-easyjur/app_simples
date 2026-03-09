@@ -132,7 +132,7 @@
     <footer>Sistema de Cadastro de Agendas - EasyJur &copy; Projeto de Estudos</footer>
 
     <script>
-        const API = '../../api/pessoas.php';
+        const API = '../api/pessoas.php';
         const ITENS_POR_PAGINA = 10;
         let dadosCompletos = [];
         let ordemCol = 'nome';
