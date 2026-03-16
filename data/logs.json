@@ -143,6 +143,61 @@
                 "updated_at": "2026-03-11 19:00:19"
             },
             "data": "2026-03-11 19:00:19"
+        },
+        {
+            "id": 6,
+            "entidade": "pessoas",
+            "entidade_id": 3,
+            "acao": "criar",
+            "dados_anteriores": null,
+            "dados_novos": {
+                "id": 3,
+                "nome": "Larissa",
+                "email": "email@gmail.com",
+                "telefone": "(34) 9885-6068",
+                "criado_em": "2026-03-13 17:07:01",
+                "updated_at": "2026-03-13 17:07:01"
+            },
+            "data": "2026-03-13 17:07:01"
+        },
+        {
+            "id": 7,
+            "entidade": "pessoas",
+            "entidade_id": 3,
+            "acao": "editar",
+            "dados_anteriores": {
+                "id": 3,
+                "nome": "Larissa",
+                "email": "email@gmail.com",
+                "telefone": "(34) 9885-6068",
+                "criado_em": "2026-03-13 17:07:01",
+                "updated_at": "2026-03-13 17:07:01"
+            },
+            "dados_novos": {
+                "id": 3,
+                "nome": "Larissa",
+                "email": "email2@gmail.com",
+                "telefone": "(34) 9885-6068",
+                "criado_em": "2026-03-13 17:07:01",
+                "updated_at": "2026-03-13 17:07:09"
+            },
+            "data": "2026-03-13 17:07:09"
+        },
+        {
+            "id": 8,
+            "entidade": "pessoas",
+            "entidade_id": 3,
+            "acao": "excluir",
+            "dados_anteriores": {
+                "id": 3,
+                "nome": "Larissa",
+                "email": "email2@gmail.com",
+                "telefone": "(34) 9885-6068",
+                "criado_em": "2026-03-13 17:07:01",
+                "updated_at": "2026-03-13 17:07:09"
+            },
+            "dados_novos": null,
+            "data": "2026-03-13 17:07:29"
         }
     ]
 }
