@@ -277,12 +277,13 @@
         async function salvar(e) {
             e.preventDefault();
             const email = document.getElementById('email').value.trim();
-            if (!validarEmail(email)) {
-                document.getElementById('email').classList.add('invalido');
-                mostrarToast('E-mail inválido.', 'erro');
-                return;
-            }
-            document.getElementById('email').classList.remove('invalido');
+            // BUG-002: validação comentada para reproduzir o bug no backend
+            // if (!validarEmail(email)) {
+            //     document.getElementById('email').classList.add('invalido');
+            //     mostrarToast('E-mail inválido.', 'erro');
+            //     return;
+            // }
+            // document.getElementById('email').classList.remove('invalido');
             const id = document.getElementById('pessoaId').value;
             const payload = {
                 nome: document.getElementById('nome').value.trim(),
