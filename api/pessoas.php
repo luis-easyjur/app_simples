@@ -39,7 +39,7 @@ switch ($metodo) {
             exit;
         }
         $email = trim($input['email'] ?? '');
-        if ($email && !filter_var($email, FILTER_SANITIZE_EMAIL)) {
+        if ($email && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
             responder(['erro' => 'E-mail inválido'], 400);
             exit;
         }

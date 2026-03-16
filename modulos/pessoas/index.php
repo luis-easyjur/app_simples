@@ -98,7 +98,7 @@
     <div class="modal-overlay" id="modalOverlay" onclick="fecharModalSeOverlay(event)">
         <div class="modal" onclick="event.stopPropagation()">
             <h2 id="modalTitulo">Nova pessoa</h2>
-            <form id="formPessoa" onsubmit="salvar(event)">
+            <form id="formPessoa" onsubmit="salvar(event)" novalidate>
                 <input type="hidden" id="pessoaId" value="">
                 <div class="form-group">
                     <label for="nome">Nome *</label>
@@ -132,7 +132,7 @@
     <footer>Sistema de Cadastro de Agendas - EasyJur &copy; Projeto de Estudos</footer>
 
     <script>
-        const API = '../api/pessoas.php';
+        const API = '/app_simples/api/pessoas.php';
         const ITENS_POR_PAGINA = 10;
         let dadosCompletos = [];
         let ordemCol = 'nome';
@@ -277,13 +277,13 @@
         async function salvar(e) {
             e.preventDefault();
             const email = document.getElementById('email').value.trim();
-            // BUG-002: validação comentada para reproduzir o bug no backend
-            // if (!validarEmail(email)) {
-            //     document.getElementById('email').classList.add('invalido');
-            //     mostrarToast('E-mail inválido.', 'erro');
-            //     return;
-            // }
-            // document.getElementById('email').classList.remove('invalido');
+             BUG-002: validação comentada para reproduzir o bug no backend
+             if (!validarEmail(email)) {
+                 document.getElementById('email').classList.add('invalido');
+                 mostrarToast('E-mail inválido.', 'erro');
+                 return;
+             }
+             document.getElementById('email').classList.remove('invalido');
             const id = document.getElementById('pessoaId').value;
             const payload = {
                 nome: document.getElementById('nome').value.trim(),
