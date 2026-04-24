@@ -498,6 +498,7 @@
         async function salvar(e) {
             e.preventDefault();
             const dataVal = document.getElementById('data_agenda').value;
+    
             if (dataVal && dataVal < hoje) {
                 mostrarToast('Data não pode ser no passado.', 'erro');
                 return;

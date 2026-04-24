@@ -95,6 +95,54 @@
                 "updated_at": "2026-03-09 18:15:40"
             },
             "data": "2026-03-09 18:15:40"
+        },
+        {
+            "id": 4,
+            "entidade": "agendas",
+            "entidade_id": 3,
+            "acao": "criar",
+            "dados_anteriores": null,
+            "dados_novos": {
+                "id": 3,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [
+                    2
+                ],
+                "titulo": "Teste",
+                "data_agenda": "2026-03-11",
+                "hora_inicio": "13:00",
+                "hora_fim": "15:00",
+                "descricao": "teste",
+                "status": "agendado",
+                "criado_em": "2026-03-11 16:47:37",
+                "updated_at": "2026-03-11 16:47:37"
+            },
+            "data": "2026-03-11 16:47:37"
+        },
+        {
+            "id": 5,
+            "entidade": "agendas",
+            "entidade_id": 4,
+            "acao": "criar",
+            "dados_anteriores": null,
+            "dados_novos": {
+                "id": 4,
+                "pessoa_id": 1,
+                "tipo_id": 1,
+                "tag_ids": [
+                    2
+                ],
+                "titulo": "TESTE FINAL",
+                "data_agenda": "2026-03-31",
+                "hora_inicio": "09:00",
+                "hora_fim": "10:00",
+                "descricao": "",
+                "status": "agendado",
+                "criado_em": "2026-03-11 19:00:19",
+                "updated_at": "2026-03-11 19:00:19"
+            },
+            "data": "2026-03-11 19:00:19"
         }
     ]
 }
