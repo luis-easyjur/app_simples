@@ -1,6 +1,6 @@
-# Guia de Correção dos 4 Bugs
+# Guia de Correção dos 7 Bugs
 
-Este documento contém a solução para os 4 bugs introduzidos no projeto. **Não leia antes de tentar corrigir!**
+Este documento contém a solução para os 7 bugs introduzidos no projeto. **Não leia antes de tentar corrigir!**
 
 ---
 
@@ -92,6 +92,74 @@ const API = '../../api/pessoas.php';
 
 ---
 
+---
+
+## Bug 5 – PHP (api/lembretes.php)
+
+**Sintoma:** Ao excluir um lembrete, **todos os outros são removidos** e apenas o clicado permanece na lista.
+
+**Causa:** Operador de comparação invertido no `array_filter` do método DELETE.
+
+**Local:** Linha ~82 em `api/lembretes.php`
+
+**Correção:** Trocar `===` por `!==` na condição do filtro:
+
+```php
+// ERRADO (bug):
+$dados['lembretes'] = array_values(array_filter($dados['lembretes'], fn($l) => (int)$l['id'] === $id));
+
+// CORRETO:
+$dados['lembretes'] = array_values(array_filter($dados['lembretes'], fn($l) => (int)$l['id'] !== $id));
+```
+
+**Explicação:** O `array_filter` deve **manter** os registros cujo ID é diferente do que foi excluído (`!==`). Com `===`, faz o inverso: mantém apenas o excluído e descarta todos os outros.
+
+---
+
+## Bug 6 – JavaScript (modulos/lembretes/index.php)
+
+**Sintoma:** Na listagem de Lembretes, a coluna "Data lembrete" exibe **"Invalid Date"** para todos os registros.
+
+**Causa:** Remoção do `.replace(' ', 'T')` na função `formatarDataHora`. O construtor `new Date()` não aceita o formato `YYYY-MM-DD HH:MM:SS` com espaço em alguns browsers.
+
+**Local:** Função `formatarDataHora` no `<script>` de `modulos/lembretes/index.php`
+
+**Correção:** Restaurar o `.replace(' ', 'T')` antes de passar para `new Date()`:
+
+```javascript
+// ERRADO (bug):
+const dt = new Date(d);
+
+// CORRETO:
+const dt = new Date(d.replace(' ', 'T'));
+```
+
+**Explicação:** As datas são salvas no formato `2026-04-25 08:00:00` (com espaço). O padrão ISO 8601 usa `T` como separador (`2026-04-25T08:00:00`). O `.replace(' ', 'T')` garante que `new Date()` interprete corretamente em todos os browsers.
+
+---
+
+## Bug 7 – CSS (modulos/tags/index.php)
+
+**Sintoma:** No módulo de Tags, ao abrir o modal de "Nova tag" ou "Editar", o modal aparece **atrás** do conteúdo da página, ficando inacessível.
+
+**Causa:** `z-index` do overlay do modal zerado.
+
+**Local:** Classe `.modal-overlay` no `<style>` de `modulos/tags/index.php`
+
+**Correção:** Restaurar o `z-index` para `1000`:
+
+```css
+/* ERRADO (bug): */
+.modal-overlay { ... z-index: 0; ... }
+
+/* CORRETO: */
+.modal-overlay { ... z-index: 1000; ... }
+```
+
+**Explicação:** Com `z-index: 0`, o overlay fica na mesma camada de empilhamento dos demais elementos da página, sendo sobreposto pela tabela e outros conteúdos. O valor `1000` garante que o modal fique acima de tudo.
+
+---
+
 ## Resumo
 
 | # | Arquivo | Tipo | Correção |
@@ -99,4 +167,7 @@ const API = '../../api/pessoas.php';
 | 1 | api/agendas.php | PHP | `>` → `<` na validação de data |
 | 2 | api/pessoas.php | PHP | `FILTER_SANITIZE_EMAIL` → `FILTER_VALIDATE_EMAIL` (2 ocorrências) |
 | 3 | modulos/pessoas/index.php | JS | `'../api/pessoas.php'` → `'../../api/pessoas.php'` |
-| 4 | modulos/agendas/index.php | CSS | `z-index: 1` → `z-index: 1000` no .modal-overlay |
+| 4 | modulos/agendas/index.php | CSS | `z-index: 1` → `z-index: 1000` no `.modal-overlay` |
+| 5 | api/lembretes.php | PHP | `=== $id` → `!== $id` no `array_filter` do DELETE |
+| 6 | modulos/lembretes/index.php | JS | Restaurar `.replace(' ', 'T')` em `formatarDataHora` |
+| 7 | modulos/tags/index.php | CSS | `z-index: 0` → `z-index: 1000` no `.modal-overlay` |
