@@ -49,7 +49,7 @@
         .toast.sucesso { background: #22c55e; color: white; }
         .toast.erro { background: var(--vermelho-easyjur); color: white; }
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
-        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: -1; align-items: center; justify-content: center; }
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 100; align-items: center; justify-content: center; }
         .modal-overlay.ativo { display: flex; }
         .modal { background: white; border-radius: 8px; padding: 2.5rem; width: 100%; max-width: 720px; min-height: 70vh; max-height: 90vh; overflow-y: auto; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
         .modal h2 { margin-bottom: 1.5rem; font-size: 1.35rem; }
@@ -111,12 +111,14 @@
                 </select>
                 <a href="../../api/exportar.php?tipo=agendas" class="btn btn-cancelar" download="agendas.csv">Exportar CSV</a>
             </div>
+           
             <div class="toolbar-right">
                 <button class="btn btn-primario" onclick="abrirModal()">Nova agenda</button>
             </div>
         </div>
         <div id="conteudo"><div class="loading"><span class="spinner"></span>Carregando...</div></div>
         <div class="paginacao" id="paginacao" style="display:none;"></div>
+   
     </main>
     <div class="modal-overlay" id="modalOverlay" onclick="fecharModalSeOverlay(event)">
         <div class="modal" onclick="event.stopPropagation()">
@@ -186,6 +188,7 @@
             </form>
         </div>
     </div>
+    =============================== Termina logica de abrir o modal
     <div class="modal-confirm-overlay" id="modalConfirm" onclick="fecharConfirmSeOverlay(event)">
         <div class="modal-confirm" onclick="event.stopPropagation()">
             <p id="confirmMsg">Excluir este registro?</p>
