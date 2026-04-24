@@ -79,7 +79,7 @@ switch ($metodo) {
         $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
         if ($id <= 0) { responder(['erro' => 'ID inválido'], 400); exit; }
         $dados = json_decode(file_get_contents($dataFile), true) ?: ['lembretes' => []];
-        $dados['lembretes'] = array_values(array_filter($dados['lembretes'], fn($l) => (int)$l['id'] !== $id));
+        $dados['lembretes'] = array_values(array_filter($dados['lembretes'], fn($l) => (int)$l['id'] === $id));
         if (salvar($dataFile, $dados)) responder(['mensagem' => 'Lembrete excluído']);
         else responder(['erro' => 'Erro ao salvar'], 500);
         break;
