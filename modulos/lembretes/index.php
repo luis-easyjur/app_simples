@@ -137,7 +137,7 @@
 
         function formatarDataHora(d) {
             if (!d) return '-';
-            const dt = new Date(d.replace(' ', ''));
+            const dt = new Date(d.replace(' ', 'T'));
             return dt.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit' });
         }
 
