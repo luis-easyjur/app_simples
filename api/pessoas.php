@@ -44,12 +44,7 @@ switch ($metodo) {
             exit;
         }
         $dados = lerPessoas($dataFile);
-        $novoId = 1;
-        foreach ($dados['pessoas'] as $p) {
-            if (($p['id'] ?? 0) >= $novoId) {
-                $novoId = $p['id'] + 1;
-            }
-        }
+        $novoId = count($dados['pessoas']) + 1;
         $agora = date('Y-m-d H:i:s');
         $novaPessoa = [
             'id' => $novoId,

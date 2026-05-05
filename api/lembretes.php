@@ -45,7 +45,7 @@ switch ($metodo) {
             'id' => $novoId,
             'agenda_id' => (int)$body['agenda_id'],
             'mensagem' => trim($body['mensagem']),
-            'data_lembrete' => trim($body['data_lembrete'] ?? date('Y-m-d H:i:s')),
+            'data_lembrete' => trim($body['data_lembrete'] ?? date('d/m/Y H:i:s')),
             'lido' => false,
             'criado_em' => date('Y-m-d H:i:s')
         ];

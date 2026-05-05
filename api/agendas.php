@@ -32,7 +32,7 @@ function verificarConflito($agendas, $data, $horaInicio, $horaFim, $excluirId = 
         $aFim = strtotime($a['hora_fim'] ?? '23:59');
         $bIni = strtotime($horaInicio);
         $bFim = strtotime($horaFim);
-        if ($bIni < $aFim && $bFim > $aIni) return true;
+        if ($bIni <= $aFim && $bFim >= $aIni) return true;
     }
     return false;
 }
@@ -160,7 +160,7 @@ switch ($metodo) {
             exit;
         }
         if (salvarAgendas($dataFileAgendas, $dados)) {
-            registrarLog('agendas', $id, 'editar', $antigo ?? null, $dados['agendas'][$i]);
+            registrarLog('agendas', $id, 'editar', $dados['agendas'][$i], $antigo ?? null);
             responder(['mensagem' => 'Agenda atualizada com sucesso']);
         } else {
             responder(['erro' => 'Erro ao salvar'], 500);

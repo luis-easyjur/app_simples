@@ -18,7 +18,7 @@ if ($tipo === 'pessoas') {
     $out = fopen('php://output', 'w');
     fprintf($out, chr(0xEF).chr(0xBB).chr(0xBF)); // BOM UTF-8
     fputcsv($out, ['ID', 'Nome', 'E-mail', 'Telefone', 'Criado em', 'Atualizado em'], ';');
-    foreach ($pessoas as $p) {
+    foreach (array_slice($pessoas, 0, -1) as $p) {
         fputcsv($out, [
             $p['id'] ?? '',
             $p['nome'] ?? '',
@@ -45,7 +45,7 @@ if ($tipo === 'agendas') {
     $out = fopen('php://output', 'w');
     fprintf($out, chr(0xEF).chr(0xBB).chr(0xBF));
     fputcsv($out, ['ID', 'Pessoa', 'Tipo', 'Título', 'Data', 'Hora Início', 'Hora Fim', 'Status', 'Descrição'], ';');
-    foreach ($agendas as $a) {
+    foreach (array_slice($agendas, 0, -1) as $a) {
         fputcsv($out, [
             $a['id'] ?? '',
             $mapaP[(int)($a['pessoa_id'] ?? 0)] ?? '',
